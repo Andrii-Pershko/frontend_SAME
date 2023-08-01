@@ -1,5 +1,5 @@
 const HistoryBlock = () => {
-  return <div>History block</div>;
+  return <aside>Історія</aside>;
 };
 
-export { HistoryBlock };
+export default HistoryBlock;

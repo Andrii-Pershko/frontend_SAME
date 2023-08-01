@@ -1,8 +1,8 @@
 const DepartmentList = () => {
   return (
-    <>
-      <h1>Department page</h1>
-    </>
+    <ul>
+      <li>example</li>
+    </ul>
   );
 };
 

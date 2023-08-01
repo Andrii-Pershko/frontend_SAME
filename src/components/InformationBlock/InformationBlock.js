@@ -1,5 +1,5 @@
-const InformationBlock = () => {
-  return <div>Info block</div>;
+const InformationBlock = ({ children }) => {
+  return <div>{children}</div>;
 };
 
-export { InformationBlock };
+export default InformationBlock;
