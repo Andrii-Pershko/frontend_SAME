@@ -1,4 +1,4 @@
-const CheckTTN = () => {
+const Home = () => {
   return (
     <>
       <h1>Check TTN page</h1>
@@ -6,4 +6,4 @@ const CheckTTN = () => {
   );
 };
 
-export { CheckTTN };
+export default Home;
