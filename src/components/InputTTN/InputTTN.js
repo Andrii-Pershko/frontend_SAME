@@ -1,9 +1,5 @@
 const InputTTN = () => {
-  return (
-    <form>
-      <input></input>
-    </form>
-  );
+  return <input></input>;
 };
 
-export {InputTTN}
+export { InputTTN };
