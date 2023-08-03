@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { parcelHistory, templateShippingData } from './utils/utilsFunctions';
+import {
+  parcelHistory,
+  templateGetDepartament,
+  templateShippingData,
+} from './utils/utilsFunctions';
 
 const API_KEY = '4bf839369c9c7b5597f4b8745e5f7010';
 
@@ -16,7 +20,7 @@ export const getParcelInfo = createAsyncThunk(
     const { WarehouseSender, WarehouseRecipient, Status } =
       responce.data.data[0];
 
-    if (responce.data.success) {
+    if (Status !== 'Номер не найден') {
       parcelHistory(inputValue);
     }
 
@@ -29,5 +33,16 @@ export const getParcelInfo = createAsyncThunk(
       inputValue,
       parcelStory,
     };
+  }
+);
+
+export const getDepartamentList = createAsyncThunk(
+  'parcel/getPargetDepartamentListcelInf',
+  async cityName => {
+    const responce = await axios.post(
+      '',
+      templateGetDepartament(cityName, API_KEY)
+    );
+    console.log('Example', responce);
   }
 );

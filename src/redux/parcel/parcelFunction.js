@@ -3,7 +3,7 @@ export const fetchParcelPending = (state, action) => {
 };
 
 export const fetchParcelFulfilled = (state, action) => {
-  state.parceStoryList = action.payload.parcelStory;
+  state.parcelStoryList = action.payload.parcelStory;
   state.isLoading = false;
   state.WarehouseSender =
     action.payload.WarehouseSender === ''
@@ -22,4 +22,8 @@ export const fetchParcelRejected = (state, action) => {
   state.WarehouseSender = '';
   state.WarehouseRecipient = '';
   state.error = `Посилки ${action.meta.arg} не існує`;
+};
+
+export const cleanParcelStory = (state, action) => {
+  state.parcelStoryList = [];
 };

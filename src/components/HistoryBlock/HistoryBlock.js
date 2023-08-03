@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setInputValue } from 'redux/input/inputSlice';
 import { getParcelInfo } from 'redux/operations';
+import { cleanParcelStory } from 'redux/parcel/parcelFunction';
+import { resetParcelList } from 'redux/parcel/parcelSlice';
 import { selectParcelList } from 'redux/selectors';
 
 const HistoryBlock = () => {
@@ -13,9 +15,15 @@ const HistoryBlock = () => {
     dispatch(setInputValue(numberParcel));
   };
 
+  const cleanStoryList = () => {
+    localStorage.setItem('storyParcel', '[]');
+    dispatch(resetParcelList());
+  };
+
   return (
     <aside>
       <p>Історія посилок</p>
+      <button onClick={cleanStoryList}>Очистити історію</button>
 
       {historyParceList.length > 0 ? (
         <ul>
@@ -26,7 +34,7 @@ const HistoryBlock = () => {
           ))}
         </ul>
       ) : (
-        <p>Ви ще не шукали посилки</p>
+        <p>Історія посилок порожння</p>
       )}
     </aside>
   );

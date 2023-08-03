@@ -29,3 +29,14 @@ export const templateShippingData = (DocumentNumber, API_KEY) => {
     },
   };
 };
+
+export const templateGetDepartament = (cityName, API_KEY) => {
+  return {
+    apiKey: `${API_KEY}`,
+    modelName: 'Address',
+    calledMethod: 'getWarehouses',
+    methodProperties: {
+      CityName: `${cityName}`,
+    },
+  };
+};

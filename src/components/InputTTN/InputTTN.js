@@ -6,7 +6,7 @@ const InputTTN = () => {
   const inputValue = useSelector(selectInput);
   const dispatch = useDispatch();
 
-  const handleInputChange = async event => {
+  const handleInputChange = event => {
     dispatch(setInputValue(event.target.value));
   };
 
