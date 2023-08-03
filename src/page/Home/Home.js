@@ -3,18 +3,26 @@ import HistoryBlock from 'components/HistoryBlock/HistoryBlock';
 import InformationBlock from 'components/InformationBlock/InformationBlock';
 import { InputTTN } from 'components/InputTTN/InputTTN';
 import StatusBlock from 'components/StatusBlock/StatusBlock';
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    const storyPercel = localStorage.getItem('storyParcel');
+
+    if (!storyPercel) {
+      localStorage.setItem('storyParcel', JSON.stringify([]));
+    }
+  });
   return (
     <>
       <form>
-        <InputTTN></InputTTN>
-        <BtnGetTTN></BtnGetTTN>
+        <InputTTN />
+        <BtnGetTTN />
       </form>
 
       <InformationBlock>
-        <HistoryBlock></HistoryBlock>
-        <StatusBlock></StatusBlock>
+        <HistoryBlock />
+        <StatusBlock />
       </InformationBlock>
     </>
   );
