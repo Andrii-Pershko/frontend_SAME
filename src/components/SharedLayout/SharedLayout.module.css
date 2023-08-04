@@ -1,0 +1,82 @@
+.logo {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+.togleModal {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    transition: left 1s;
+}
+
+.togleModal::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 6px;
+    background-color: red;
+    border-radius: 20px;
+    top: calc(50% - 7px);
+    left: -20px;
+    transform: translate(0, 50%) rotate(45deg);
+
+    animation: moveRightLeft 2s infinite;
+}
+
+.togleModal::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 6px;
+    background-color: red;
+    border-radius: 20px;
+    top: calc(50% + 7px);
+    left: -20px;
+    transform: translate(0, 50%) rotate(-45deg);
+    animation: moveRightLeft 2s infinite;
+}
+
+.openModalTogle {
+    left: 280px;
+    transition: left 1s;
+}
+
+.openModalTogle::after {
+    transform: translate(0, 50%) rotate(45deg);
+}
+
+.openModalTogle::before {
+    transform: translate(0, 50%) rotate(-45deg);
+}
+
+nav {
+    display: none;
+}
+
+@keyframes moveRightLeft {
+    0% {
+        left: -20;
+    }
+
+    50% {
+
+        left: -13px;
+    }
+
+    100% {
+        left: -20;
+    }
+}
