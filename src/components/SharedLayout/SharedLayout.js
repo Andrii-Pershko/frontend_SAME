@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom';
 
 const SharedLayout = () => {
   return (
-    <>
+    <Container>
       <header>
         <h1> Відстежуйте свою посилку легко</h1>
         <NavigateBtn navigateTo={'/'} content={'Перевірити ТТН'}></NavigateBtn>
@@ -21,7 +21,7 @@ const SharedLayout = () => {
           </Container>
         </main>
       </Suspense>
-    </>
+    </Container>
   );
 };
 
