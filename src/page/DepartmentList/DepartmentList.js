@@ -1,8 +1,7 @@
 import { getCityName, getWarehouses } from 'citySearch_API/citySearch_API';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { getDepartamentList } from 'redux/operations';
-import { departamentList } from 'redux/selectors';
+// import { useDispatch } from 'react-redux';
+// import { getDepartamentList } from 'redux/operations';
 
 const DepartmentList = () => {
   const [city, setCity] = useState('');
@@ -11,7 +10,7 @@ const DepartmentList = () => {
   const [warehousesName, setWarehousesName] = useState('');
   const [warehousesList, setWarehousesList] = useState([]);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const setInputCity = async e => {
     const freshcity = e.target.value;
@@ -29,18 +28,16 @@ const DepartmentList = () => {
     }
   };
 
-  const handleGetDepartament = e => {
-    e.preventDefault();
-    dispatch(getDepartamentList(city));
-  };
+  // const handleGetDepartament = e => {
+  //   e.preventDefault();
+  //   dispatch(getDepartamentList(city));
+  // };
 
   const handleSelectCity = async e => {
     const freshCity = e.target.innerHTML;
     setCity(freshCity);
 
     const responce = await getWarehouses(freshCity);
-    console.log('Example', responce);
-
     setWarehousesList(responce);
   };
 
@@ -62,7 +59,7 @@ const DepartmentList = () => {
               </li>
             ))}
           </ul>
-          <button onClick={handleGetDepartament}>Пошук відділень</button>
+          {/* <button onClick={handleGetDepartament}>Пошук відділень</button> */}
         </label>
 
         <label>
