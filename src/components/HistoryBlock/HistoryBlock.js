@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setInputValue } from 'redux/input/inputSlice';
 import { getParcelInfo } from 'redux/operations';
-import { cleanParcelStory } from 'redux/parcel/parcelFunction';
 import { resetParcelList } from 'redux/parcel/parcelSlice';
 import { selectParcelList } from 'redux/selectors';
 

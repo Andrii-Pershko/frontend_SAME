@@ -23,7 +23,3 @@ export const fetchParcelRejected = (state, action) => {
   state.WarehouseRecipient = '';
   state.error = `Посилки ${action.meta.arg} не існує`;
 };
-
-export const cleanParcelStory = (state, action) => {
-  state.parcelStoryList = [];
-};
