@@ -22,7 +22,7 @@ const HistoryBlock = () => {
   return (
     <aside>
       <p>Історія посилок</p>
-      <button onClick={cleanStoryList}>Очистити історію</button>
+      <button onClick={cleanStoryList}>Очистити</button>
 
       {historyParceList.length > 0 ? (
         <ul>
