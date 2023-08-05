@@ -15,6 +15,7 @@ const Home = () => {
   });
   return (
     <>
+      <h1> Відстежуйте свою посилку легко та швидко</h1>
       <form>
         <InputTTN />
         <BtnGetTTN />

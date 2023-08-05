@@ -25,14 +25,24 @@ const StatusBlock = () => {
   }
 
   if (Status === '') {
-    return <p>Ведіть номер ТТН в поле для вводу</p>;
+    return (
+      <p className={css.enterTTNPlaceholder}>
+        Ведіть номер ТТН в поле для вводу
+      </p>
+    );
   }
 
   return (
-    <div className={css.statsBlock}>
-      <p>Статус доставки: {Status}</p>
-      <p>Відправлено: {WarehouseRecipient}</p>
-      <p>Отримано: {WarehouseSender}</p>
+    <div className={css.statusBlock}>
+      <p>
+        Статус доставки: <span>{Status}</span>
+      </p>
+      <p>
+        Відправлено: <span>{WarehouseRecipient}</span>
+      </p>
+      <p>
+        Отримано: <span>{WarehouseSender}</span>
+      </p>
     </div>
   );
 };

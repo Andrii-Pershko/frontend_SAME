@@ -15,7 +15,6 @@ const SharedLayout = () => {
           src={require('../../img/Logo.png')}
           alt={'logo'}
         ></img>
-        <h1> Відстежуйте свою посилку легко та швидко</h1>
 
         <nav>
           <NavigateBtn

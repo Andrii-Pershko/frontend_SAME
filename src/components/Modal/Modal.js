@@ -9,10 +9,16 @@ export const Modal = () => {
   const togleModal = () => {
     setOpenModal(!openModal);
   };
+
   return (
     <div className={`${css.modal} ${openModal ? css.isOpen : ''}`}>
-      <NavigateBtn navigateTo={'/'} content={'Перевірити ТТН'}></NavigateBtn>
       <NavigateBtn
+        togleModal={togleModal}
+        navigateTo={'/'}
+        content={'Перевірити ТТН'}
+      ></NavigateBtn>
+      <NavigateBtn
+        togleModal={togleModal}
         navigateTo={'/departaments'}
         content={'Список відділень'}
       ></NavigateBtn>
@@ -20,7 +26,7 @@ export const Modal = () => {
         className={`${css.togleModal} ${openModal ? css.openModalTogle : ''}`}
         onClick={togleModal}
       ></div>
-      <HistoryBlock />
+      <HistoryBlock togleModal={togleModal} />
     </div>
   );
 };

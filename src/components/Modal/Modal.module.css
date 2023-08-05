@@ -6,6 +6,7 @@
     top: 0px;
     left: -250px;
     transition: left 1s;
+    padding-top: 30px;
 }
 
 .isOpen {
@@ -27,8 +28,6 @@
     height: 32px;
     z-index: 5;
 }
-
-.openModalTogle {}
 
 .togleModal::before {
     content: '';
