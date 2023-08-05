@@ -1,9 +1,9 @@
 import { BtnGetTTN } from 'components/BtnGetTTN/BtnGetTTN';
 import HistoryBlock from 'components/HistoryBlock/HistoryBlock';
-import InformationBlock from 'components/InformationBlock/InformationBlock';
 import { InputTTN } from 'components/InputTTN/InputTTN';
 import StatusBlock from 'components/StatusBlock/StatusBlock';
 import { useEffect } from 'react';
+import css from './Home.module.css';
 
 const Home = () => {
   useEffect(() => {
@@ -20,10 +20,12 @@ const Home = () => {
         <BtnGetTTN />
       </form>
 
-      <InformationBlock>
-        <HistoryBlock />
+      <div className={css.informationBlock}>
         <StatusBlock />
-      </InformationBlock>
+        <div className={css.homeHistory}>
+          <HistoryBlock />
+        </div>
+      </div>
     </>
   );
 };

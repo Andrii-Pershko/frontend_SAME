@@ -3,6 +3,7 @@ import { setInputValue } from 'redux/input/inputSlice';
 import { getParcelInfo } from 'redux/operations';
 import { resetParcelList } from 'redux/parcel/parcelSlice';
 import { selectParcelList } from 'redux/selectors';
+import css from './HistoryBlock.module.css';
 
 const HistoryBlock = () => {
   const historyParceList = useSelector(selectParcelList);
@@ -20,7 +21,7 @@ const HistoryBlock = () => {
   };
 
   return (
-    <aside>
+    <aside className={css.historyHome}>
       <p>Історія посилок</p>
       <button onClick={cleanStoryList}>Очистити</button>
 

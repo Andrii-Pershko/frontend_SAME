@@ -1,0 +1,38 @@
+.inputContainer {
+    display: flex;
+    width: 225px;
+    position: relative;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.parcelNumberInput {
+    width: 250px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border: 2px solid red;
+    background-color: inherit;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 25px;
+    font-size: 22px;
+
+}
+
+.inputCross {
+    background-image: url('../../img/croosRed.png');
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    background-repeat: no-repeat;
+    right: -3px;
+    top: 10px;
+}
+
+
+.parcelNumberInput:focus {
+    outline: red
+}

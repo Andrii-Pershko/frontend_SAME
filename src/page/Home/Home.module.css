@@ -1,0 +1,7 @@
+.informationBlock {
+    display: flex;
+}
+
+.homeHistory {
+    display: none;
+}

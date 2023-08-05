@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setInputValue } from 'redux/input/inputSlice';
 import { resetStatus } from 'redux/parcel/parcelSlice';
 import { selectInput } from 'redux/selectors';
+import css from './StatusBlock.module.css';
 
 const StatusBlock = () => {
   const dispatch = useDispatch();
@@ -28,11 +29,11 @@ const StatusBlock = () => {
   }
 
   return (
-    <>
+    <div className={css.statsBlock}>
       <p>Статус доставки: {Status}</p>
       <p>Відправлено: {WarehouseRecipient}</p>
       <p>Отримано: {WarehouseSender}</p>
-    </>
+    </div>
   );
 };
 

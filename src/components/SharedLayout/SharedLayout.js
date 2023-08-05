@@ -6,11 +6,6 @@ import css from './SharedLayout.module.css';
 import { Modal } from 'components/Modal/Modal';
 
 const SharedLayout = () => {
-  const [openModal, setOpenModal] = useState(false);
-
-  const togleModal = () => {
-    setOpenModal(!openModal);
-  };
   return (
     <Container>
       <header>
@@ -21,10 +16,7 @@ const SharedLayout = () => {
           alt={'logo'}
         ></img>
         <h1> Відстежуйте свою посилку легко та швидко</h1>
-        <div
-          className={`${css.togleModal} ${openModal ? css.openModalTogle : ''}`}
-          onClick={togleModal}
-        ></div>
+
         <nav>
           <NavigateBtn
             navigateTo={'/'}
@@ -38,12 +30,10 @@ const SharedLayout = () => {
       </header>
       <Suspense fallback={<div>Loading page...</div>}>
         <main>
-          <Container>
-            <Outlet />
-          </Container>
+          <Outlet />
         </main>
       </Suspense>
-      <Modal openModal={openModal} />
+      <Modal />
     </Container>
   );
 };
