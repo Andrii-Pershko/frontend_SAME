@@ -10,6 +10,7 @@
     text-align: center;
     display: block;
     flex-grow: 1;
+    margin-right: 40px;
 }
 
 .statusBlock>p:not(:last-child) {
