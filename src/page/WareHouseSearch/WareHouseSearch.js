@@ -6,6 +6,7 @@ import {
   selectCityName,
   selectIsLoadingCity,
   selectIsLoadingWareHouse,
+  selectSelectWareHouse,
   selectWareHouseList,
   selectWareHouseName,
 } from 'redux/selectors';
@@ -15,6 +16,7 @@ import {
   resetWareHouse,
   resetWarehouseField,
   setCityList,
+  setSelectWareHouse,
   setWareHouseName,
 } from 'redux/wareHouse/wareHouseSlice';
 import List from 'components/List';
@@ -25,10 +27,11 @@ import Table from 'components/Table/Table';
 const WareHouseSearch = () => {
   const [closeWareHouseList, setCloseWareHouseList] = useState(true);
   const [closeCityList, setCloseCityList] = useState(true);
-  const [selectWareHouse, setSelectWarhouse] = useState(null);
+  // const [selectWareHouse, setSelectWarhouse] = useState(null);
 
   const dispath = useDispatch();
 
+  const selectWareHouse = useSelector(selectSelectWareHouse);
   const cityName = useSelector(selectCityName);
   const cityList = useSelector(selectCityList);
   const cityIsLoading = useSelector(selectIsLoadingCity);
@@ -91,19 +94,19 @@ const WareHouseSearch = () => {
     const warhouseData = wareHouseList.filter(
       wareHouse => wareHouse.Description === selectWareHouse
     );
-
-    setSelectWarhouse(warhouseData);
+    dispath(setSelectWareHouse(warhouseData));
+    // setSelectWarhouse(warhouseData);
   };
 
   const handlerWareHouse = e => {
     const wareHouseValue = e.target.value;
     dispath(setWareHouseName(wareHouseValue));
-    setSelectWarhouse(null);
+    dispath(setSelectWareHouse(null));
   };
 
   const handleClearWareHouseField = () => {
     dispath(resetWarehouseField());
-    setSelectWarhouse(null);
+    dispath(setSelectWareHouse(null));
   };
   return (
     <>
