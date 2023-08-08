@@ -11,3 +11,4 @@ export const selectWareHouseList = state => state.wareHouse.wareHouseList;
 export const selectIsLoadingCity = state => state.wareHouse.isLoadingCity;
 export const selectIsLoadingWareHouse = state =>
   state.wareHouse.isLoadingWareHouse;
+export const selectSelectWareHouse = state => state.wareHouse.selecrWarhouse;

@@ -10,7 +10,6 @@ const SharedLayout = () => {
     <Container>
       <header>
         <img
-          navigateTo={'/'}
           className={css.logo}
           height={'50px'}
           src={require('../../img/Logo.png')}
@@ -19,11 +18,11 @@ const SharedLayout = () => {
 
         <nav>
           <NavigateBtn
-            navigateTo={'/'}
+            navigateto={'/'}
             content={'Перевірити ТТН'}
           ></NavigateBtn>
           <NavigateBtn
-            navigateTo={'/departaments'}
+            navigateto={'/departaments'}
             content={'Список відділень'}
           ></NavigateBtn>
         </nav>
