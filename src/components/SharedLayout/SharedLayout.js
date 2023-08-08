@@ -1,6 +1,6 @@
 import Container from 'components/Container/Container';
 import { NavigateBtn } from 'components/NavigateBtn/NavigateBtn';
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import css from './SharedLayout.module.css';
 import { Modal } from 'components/Modal/Modal';
