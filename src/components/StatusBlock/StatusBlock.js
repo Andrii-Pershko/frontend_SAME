@@ -42,11 +42,11 @@ const StatusBlock = () => {
           </tr>
           <tr>
             <th>Відправленно</th>
-            <td>{WarehouseRecipient}</td>
+            <td>{WarehouseSender}</td>
           </tr>
           <tr>
             <th>Отримано</th>
-            <td>{WarehouseSender}</td>
+            <td>{WarehouseRecipient}</td>
           </tr>
         </tbody>
       </table>
