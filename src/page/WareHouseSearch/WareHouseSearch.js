@@ -1,9 +1,11 @@
 import css from './WareHouseSearch.module.css';
-import { Input } from 'components/Input/Input';
+import Input from 'components/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  selectCityError,
   selectCityList,
   selectCityName,
+  selectErrorWareHouse,
   selectIsLoadingCity,
   selectIsLoadingWareHouse,
   selectSelectWareHouse,
@@ -27,15 +29,17 @@ import Table from 'components/Table/Table';
 const WareHouseSearch = () => {
   const [closeWareHouseList, setCloseWareHouseList] = useState(true);
   const [closeCityList, setCloseCityList] = useState(true);
-  // const [selectWareHouse, setSelectWarhouse] = useState(null);
+
+  const cityNotFound = useSelector(selectCityError);
+  const wareHouseNotFound = useSelector(selectErrorWareHouse);
 
   const dispath = useDispatch();
 
-  const selectWareHouse = useSelector(selectSelectWareHouse);
   const cityName = useSelector(selectCityName);
   const cityList = useSelector(selectCityList);
   const cityIsLoading = useSelector(selectIsLoadingCity);
 
+  const selectWareHouse = useSelector(selectSelectWareHouse);
   const wareHouseInput = useSelector(selectWareHouseName);
   const wareHouseList = useSelector(selectWareHouseList);
   const wareHouseIsLoad = useSelector(selectIsLoadingWareHouse);
@@ -95,7 +99,6 @@ const WareHouseSearch = () => {
       wareHouse => wareHouse.Description === selectWareHouse
     );
     dispath(setSelectWareHouse(warhouseData));
-    // setSelectWarhouse(warhouseData);
   };
 
   const handlerWareHouse = e => {
@@ -120,6 +123,11 @@ const WareHouseSearch = () => {
           styleName={'wareHouseFild'}
           isLoading={cityIsLoading}
         />
+        {cityNotFound ? (
+          cityName === '' ? null : (
+            <p className={css.notFound}>Місто не знайдене</p>
+          )
+        ) : null}
 
         <List
           list={cityList}
@@ -139,6 +147,11 @@ const WareHouseSearch = () => {
           disabled={wareHouseList.length === 0}
           isLoading={wareHouseIsLoad}
         />
+        {wareHouseNotFound && cityName !== '' ? (
+          <p className={css.notFound}>
+            Відділення відсутні або не обслуговуються
+          </p>
+        ) : null}
         <List
           list={filteredWarehouse}
           property={'Description'}

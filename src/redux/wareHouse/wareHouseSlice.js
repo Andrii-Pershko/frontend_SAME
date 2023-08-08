@@ -25,6 +25,8 @@ const wareHousetSlice = createSlice({
       state.cityList = [];
       state.wareHouseList = [];
       state.wareHouseName = '';
+      state.errorWareHouse = false;
+      state.selecrWarhouse = null;
     },
     setWareHouseName: (state, action) => {
       state.wareHouseName = action.payload;

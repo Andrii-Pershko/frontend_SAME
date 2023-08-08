@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from 'react-router';
 
 const HistoryBlock = ({ togleModal }) => {
   const historyParceList = useSelector(selectParcelList);
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();

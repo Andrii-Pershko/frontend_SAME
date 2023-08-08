@@ -8,7 +8,7 @@ const override = {
   top: '10px',
 };
 
-export const Input = ({
+const Input = ({
   disabled,
   value,
   placeholder,
@@ -44,3 +44,5 @@ export const Input = ({
     </div>
   );
 };
+
+export default Input;

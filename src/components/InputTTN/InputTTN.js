@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { resetInputTtn, setInputValue } from 'redux/input/inputSlice';
 import { selectInput } from 'redux/selectors';
-import { Input } from 'components/Input/Input';
+import Input from 'components/Input';
 
 const InputTTN = () => {
   const inputValue = useSelector(selectInput);
+
   const dispatch = useDispatch();
 
   const handleInputChange = e => {
@@ -25,4 +26,4 @@ const InputTTN = () => {
   );
 };
 
-export { InputTTN };
+export default InputTTN;

@@ -6,5 +6,6 @@ export const initialState = {
   wareHouseList: [],
   selecrWarhouse: null,
   isLoadingWareHouse: false,
-  error: false,
+  errorCity: false,
+  errorWareHouse: false,
 };

@@ -2,15 +2,13 @@ import { useNavigate } from 'react-router-dom';
 import css from './NavigateBtn.module.css';
 
 const NavigateBtn = ({ content, navigateto, togleModal }) => {
-  console.log('Example', togleModal);
   const navigate = useNavigate();
 
   const handlerNavigate = () => {
     navigate(navigateto);
     if (togleModal) {
-         togleModal();
+      togleModal();
     }
- 
   };
   return (
     <button className={css.navigateBtn} onClick={handlerNavigate}>
@@ -19,4 +17,4 @@ const NavigateBtn = ({ content, navigateto, togleModal }) => {
   );
 };
 
-export { NavigateBtn };
+export default NavigateBtn;
