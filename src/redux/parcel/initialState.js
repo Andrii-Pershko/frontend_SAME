@@ -7,4 +7,5 @@ export const initialState = {
   Status: '',
   isLoading: false,
   error: null,
+  Number: null,
 };

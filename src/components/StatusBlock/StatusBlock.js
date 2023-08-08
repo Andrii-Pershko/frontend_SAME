@@ -8,9 +8,8 @@ import css from './StatusBlock.module.css';
 const StatusBlock = () => {
   const dispatch = useDispatch();
   const inputValue = useSelector(selectInput);
-  const { WarehouseSender, WarehouseRecipient, Status, error } = useSelector(
-    state => state.parcel
-  );
+  const { WarehouseSender, WarehouseRecipient, Status, error, Number } =
+    useSelector(state => state.parcel);
 
   useEffect(() => {
     if (Status === 'Номер не найден') {
@@ -36,6 +35,10 @@ const StatusBlock = () => {
     <div className={css.pearcelData}>
       <table>
         <tbody>
+          <tr>
+            <th>Номер посилки</th>
+            <td>{Number}</td>
+          </tr>
           <tr>
             <th>Статус доставки</th>
             <td>{Status}</td>

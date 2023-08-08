@@ -14,6 +14,7 @@ export const fetchParcelFulfilled = (state, action) => {
       ? 'Данні відсутні або приховані'
       : action.payload.WarehouseRecipient;
   state.Status = action.payload.Status;
+  state.Number = action.payload.Number;
   state.error = null;
 };
 

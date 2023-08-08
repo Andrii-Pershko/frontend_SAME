@@ -16,7 +16,8 @@ export const getParcelInfo = createAsyncThunk('parcelInf', async inputValue => {
     '',
     templateShippingData(inputValue, API_KEY)
   );
-  const { WarehouseSender, WarehouseRecipient, Status } = responce.data.data[0];
+  const { WarehouseSender, WarehouseRecipient, Status, Number } =
+    responce.data.data[0];
 
   if (Status !== 'Номер не найден') {
     parcelHistory(inputValue);
@@ -24,12 +25,15 @@ export const getParcelInfo = createAsyncThunk('parcelInf', async inputValue => {
 
   const parcelStory = JSON.parse(localStorage.getItem('storyParcel'));
 
+  console.log('Example', Number);
+
   return {
     WarehouseSender,
     WarehouseRecipient,
     Status,
     inputValue,
     parcelStory,
+    Number,
   };
 });
 
