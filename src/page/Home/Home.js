@@ -23,9 +23,7 @@ const Home = () => {
 
       <div className={css.informationBlock}>
         <StatusBlock />
-        <div className={css.homeHistory}>
-          <HistoryBlock />
-        </div>
+        <HistoryBlock />
       </div>
     </>
   );

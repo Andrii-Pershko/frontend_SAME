@@ -8,6 +8,8 @@
 
 .enterTTNPlaceholder {
     text-align: center;
+    display: block;
+    flex-grow: 1;
 }
 
 .statusBlock>p:not(:last-child) {
@@ -22,6 +24,7 @@
 .pearcelData {
     background-color: white;
     margin-bottom: 10px;
+    flex-grow: 1;
 }
 
 .pearcelData table {
@@ -55,4 +58,5 @@
         width: 100%;
         max-width: 700px;
     }
+    
 }
