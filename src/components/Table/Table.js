@@ -14,7 +14,7 @@ const Table = ({
   };
 
   return (
-    <>
+    <div className={css.tableThumb}>
       <div className={css.wareHouseData}>
         <table>
           <tbody>
@@ -55,7 +55,7 @@ const Table = ({
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 

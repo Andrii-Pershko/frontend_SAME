@@ -33,16 +33,23 @@ const StatusBlock = () => {
   }
 
   return (
-    <div className={css.statusBlock}>
-      <p>
-        Статус доставки: <span>{Status}</span>
-      </p>
-      <p>
-        Відправлено: <span>{WarehouseRecipient}</span>
-      </p>
-      <p>
-        Отримано: <span>{WarehouseSender}</span>
-      </p>
+    <div className={css.pearcelData}>
+      <table>
+        <tbody>
+          <tr>
+            <th>Статус доставки</th>
+            <td>{Status}</td>
+          </tr>
+          <tr>
+            <th>Відправленно</th>
+            <td>{WarehouseRecipient}</td>
+          </tr>
+          <tr>
+            <th>Отримано</th>
+            <td>{WarehouseSender}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

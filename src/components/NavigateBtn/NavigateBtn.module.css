@@ -15,3 +15,17 @@
 .navigateBtn:active {
     background-color: rgb(131, 0, 0);
 }
+
+@media screen and (min-width:768px) {
+    .navigateBtn {
+        margin: 0;
+        width: 25%;
+
+    }
+
+    .navigateBtn:first-child {
+        margin: 0;
+        width: 25%;
+        margin-right: 40px;
+    }
+}

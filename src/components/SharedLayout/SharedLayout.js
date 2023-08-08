@@ -10,6 +10,7 @@ const SharedLayout = () => {
     <Container>
       <header>
         <img
+          navigateTo={'/'}
           className={css.logo}
           height={'50px'}
           src={require('../../img/Logo.png')}

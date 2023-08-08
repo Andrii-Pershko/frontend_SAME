@@ -85,3 +85,9 @@
         left: -20;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .modal {
+        display: none;
+    }
+}
