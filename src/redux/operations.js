@@ -25,8 +25,6 @@ export const getParcelInfo = createAsyncThunk('parcelInf', async inputValue => {
 
   const parcelStory = JSON.parse(localStorage.getItem('storyParcel'));
 
-  console.log('Example', Number);
-
   return {
     WarehouseSender,
     WarehouseRecipient,
