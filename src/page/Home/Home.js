@@ -1,4 +1,4 @@
-import { BtnGetTTN } from 'components/BtnGetTTN/BtnGetTTN';
+import BtnGetTTN from 'components/BtnGetTTN/BtnGetTTN';
 import HistoryBlock from 'components/HistoryBlock/HistoryBlock';
 import { InputTTN } from 'components/InputTTN/InputTTN';
 import StatusBlock from 'components/StatusBlock/StatusBlock';

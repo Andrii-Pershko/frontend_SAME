@@ -18,7 +18,10 @@
     padding-left: 15px;
     padding-right: 25px;
     font-size: 22px;
+}
 
+.parcelNumberInput:focus {
+    outline: none
 }
 
 .inputCross {
@@ -32,7 +35,20 @@
     top: 10px;
 }
 
+.wareHouseFild {
+    min-width: 250px;
+    width: 100%;
+}
 
-.parcelNumberInput:focus {
-    outline: red
+
+.wareHouseFild:disabled {
+    border-color: rgb(184, 184, 184);
+}
+
+.wareHouseFild:disabled~.inputCross {
+    display: none;
+}
+
+.hidenCross {
+    display: none;
 }

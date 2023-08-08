@@ -7,8 +7,11 @@ const inputSlice = createSlice({
     setInputValue: (state, action) => {
       return action.payload;
     },
+    resetInputTtn: () => {
+      return '';
+    },
   },
 });
 
-export const { setInputValue } = inputSlice.actions;
+export const { setInputValue, resetInputTtn } = inputSlice.actions;
 export const inputReducer = inputSlice.reducer;

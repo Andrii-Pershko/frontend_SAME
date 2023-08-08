@@ -4,18 +4,22 @@ import { getParcelInfo } from 'redux/operations';
 import { resetParcelList } from 'redux/parcel/parcelSlice';
 import { selectParcelList } from 'redux/selectors';
 import css from './HistoryBlock.module.css';
+import { useLocation, useNavigate } from 'react-router';
 
 const HistoryBlock = ({ togleModal }) => {
   const historyParceList = useSelector(selectParcelList);
   const dispatch = useDispatch();
-
-  console.log('Example', historyParceList.length);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleGetStatusParcel = e => {
     const numberParcel = e.target.innerText;
     dispatch(getParcelInfo(numberParcel));
     dispatch(setInputValue(numberParcel));
     togleModal();
+    if (location.pathname === '/departaments') {
+      navigate('/', { replace: true });
+    }
   };
 
   const cleanStoryList = () => {

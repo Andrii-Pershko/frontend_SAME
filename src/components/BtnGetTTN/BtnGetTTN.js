@@ -26,6 +26,4 @@ const BtnGetTTN = () => {
   );
 };
 
-export { BtnGetTTN };
-
-// JSON.parse(localStorage.getItem('storyParcel'));
+export default BtnGetTTN;

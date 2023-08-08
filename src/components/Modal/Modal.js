@@ -4,7 +4,7 @@ import HistoryBlock from 'components/HistoryBlock/HistoryBlock';
 import { useState } from 'react';
 
 export const Modal = () => {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
 
   const togleModal = () => {
     setOpenModal(!openModal);
