@@ -27,6 +27,7 @@ const Home = () => {
           <HistoryBlock />
         </div>
       </div>
+      
     </>
   );
 };
