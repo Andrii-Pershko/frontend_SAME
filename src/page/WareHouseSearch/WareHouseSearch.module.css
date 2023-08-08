@@ -1,7 +1,16 @@
 .inputThumb {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     position: relative;
     width: 100%;
+}
+
+.notFound {
+    position: absolute;
+    top: 100%;
+    right: 50%;
+    text-align: center;
+    transform: translate(50%, 0);
+    color: red;
 }
 
 .inputThumb:first-child {

@@ -1,6 +1,6 @@
 import BtnGetTTN from 'components/BtnGetTTN/BtnGetTTN';
 import HistoryBlock from 'components/HistoryBlock/HistoryBlock';
-import { InputTTN } from 'components/InputTTN/InputTTN';
+import InputTTN from 'components/InputTTN';
 import StatusBlock from 'components/StatusBlock/StatusBlock';
 import { useEffect } from 'react';
 import css from './Home.module.css';
@@ -27,7 +27,6 @@ const Home = () => {
           <HistoryBlock />
         </div>
       </div>
-      
     </>
   );
 };
