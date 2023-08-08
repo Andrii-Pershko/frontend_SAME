@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router';
 
 const HistoryBlock = ({ togleModal }) => {
   const historyParceList = useSelector(selectParcelList);
-  
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,7 +17,11 @@ const HistoryBlock = ({ togleModal }) => {
     const numberParcel = e.target.innerText;
     dispatch(getParcelInfo(numberParcel));
     dispatch(setInputValue(numberParcel));
-    togleModal();
+
+    if (togleModal !== undefined) {
+      togleModal();
+    }
+
     if (location.pathname === '/departaments') {
       navigate('/', { replace: true });
     }
