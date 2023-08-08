@@ -3,15 +3,23 @@ import { setInputValue } from 'redux/input/inputSlice';
 import { getParcelInfo } from 'redux/operations';
 import { resetParcelList } from 'redux/parcel/parcelSlice';
 import { selectParcelList } from 'redux/selectors';
+import css from './HistoryBlock.module.css';
+import { useLocation, useNavigate } from 'react-router';
 
-const HistoryBlock = () => {
+const HistoryBlock = ({ togleModal }) => {
   const historyParceList = useSelector(selectParcelList);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleGetStatusParcel = e => {
     const numberParcel = e.target.innerText;
     dispatch(getParcelInfo(numberParcel));
     dispatch(setInputValue(numberParcel));
+    togleModal();
+    if (location.pathname === '/departaments') {
+      navigate('/', { replace: true });
+    }
   };
 
   const cleanStoryList = () => {
@@ -19,23 +27,28 @@ const HistoryBlock = () => {
     dispatch(resetParcelList());
   };
 
-  return (
-    <aside>
-      <p>Історія посилок</p>
-      <button onClick={cleanStoryList}>Очистити</button>
-
-      {historyParceList.length > 0 ? (
-        <ul>
-          {historyParceList.map(parceNumber => (
-            <li key={parceNumber} onClick={handleGetStatusParcel}>
-              {parceNumber}
-            </li>
-          ))}
-        </ul>
-      ) : (
+  if (historyParceList.length === 0) {
+    return (
+      <div className={css.history}>
         <p>Історія посилок порожння</p>
-      )}
-    </aside>
+      </div>
+    );
+  }
+  return (
+    <div className={css.history}>
+      <p>Історія посилок</p>
+      <button className={css.cleanBtn} onClick={cleanStoryList}>
+        Очистити історію
+      </button>
+
+      <ul>
+        {historyParceList.map(parceNumber => (
+          <li key={parceNumber} onClick={handleGetStatusParcel}>
+            {parceNumber}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

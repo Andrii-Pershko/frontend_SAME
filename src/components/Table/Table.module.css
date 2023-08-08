@@ -1,0 +1,65 @@
+.wareHouseData {
+    background-color: aliceblue;
+    margin-bottom: 10px;
+}
+
+.wareHouseData table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wareHouseData th {
+    width: 130px;
+    text-align: left;
+    border-right: 3px solid white
+}
+
+.wareHouseData th,
+.wareHouseData td {
+    padding: 7px;
+    border-bottom: 3px solid white
+}
+
+.wareHouseData tr:last-child td {
+    border-bottom: none;
+}
+
+.wareHouseData tr:last-child th {
+    border-bottom: none;
+}
+
+.openintTitle {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.openingTime {
+    background-color: aliceblue;
+    margin-bottom: 20px;
+}
+
+.openingTime table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.openingTime th {
+    width: 130px;
+    text-align: center;
+    border-right: 3px solid white
+}
+
+.openingTime th,
+.openingTime td {
+    padding: 7px;
+    border-bottom: 3px solid white;
+    text-align: center;
+}
+
+.openingTime tr:last-child td {
+    border-bottom: none;
+}
+
+.openingTime tr:last-child th {
+    border-bottom: none;
+}

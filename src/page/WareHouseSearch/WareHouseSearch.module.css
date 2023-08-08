@@ -1,0 +1,8 @@
+.inputThumb {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.inputThumb:first-child {
+    margin-top: 50px;
+}

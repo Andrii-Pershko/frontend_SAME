@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setInputValue } from 'redux/input/inputSlice';
 import { resetStatus } from 'redux/parcel/parcelSlice';
 import { selectInput } from 'redux/selectors';
+import css from './StatusBlock.module.css';
 
 const StatusBlock = () => {
   const dispatch = useDispatch();
@@ -24,15 +25,25 @@ const StatusBlock = () => {
   }
 
   if (Status === '') {
-    return <p>Ведіть номер ТТН в поле для вводу</p>;
+    return (
+      <p className={css.enterTTNPlaceholder}>
+        Ведіть номер ТТН в поле для вводу
+      </p>
+    );
   }
 
   return (
-    <>
-      <p>Статус доставки: {Status}</p>
-      <p>Відправлено: {WarehouseRecipient}</p>
-      <p>Отримано: {WarehouseSender}</p>
-    </>
+    <div className={css.statusBlock}>
+      <p>
+        Статус доставки: <span>{Status}</span>
+      </p>
+      <p>
+        Відправлено: <span>{WarehouseRecipient}</span>
+      </p>
+      <p>
+        Отримано: <span>{WarehouseSender}</span>
+      </p>
+    </div>
   );
 };
 

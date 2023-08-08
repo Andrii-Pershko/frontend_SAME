@@ -1,0 +1,19 @@
+.statusBlock {
+    font-size: 18px;
+    display: inline;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enterTTNPlaceholder {
+    text-align: center;
+}
+
+.statusBlock>p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.statusBlock span {
+    font-weight: 600;
+}

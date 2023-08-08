@@ -1,26 +1,38 @@
 import Container from 'components/Container/Container';
 import { NavigateBtn } from 'components/NavigateBtn/NavigateBtn';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import css from './SharedLayout.module.css';
+import { Modal } from 'components/Modal/Modal';
 
 const SharedLayout = () => {
   return (
     <Container>
       <header>
-        <h1> Відстежуйте свою посилку легко</h1>
-        <NavigateBtn navigateTo={'/'} content={'Перевірити ТТН'}></NavigateBtn>
-        <NavigateBtn
-          navigateTo={'/departaments'}
-          content={'Список відділень'}
-        ></NavigateBtn>
+        <img
+          className={css.logo}
+          height={'50px'}
+          src={require('../../img/Logo.png')}
+          alt={'logo'}
+        ></img>
+
+        <nav>
+          <NavigateBtn
+            navigateTo={'/'}
+            content={'Перевірити ТТН'}
+          ></NavigateBtn>
+          <NavigateBtn
+            navigateTo={'/departaments'}
+            content={'Список відділень'}
+          ></NavigateBtn>
+        </nav>
       </header>
       <Suspense fallback={<div>Loading page...</div>}>
         <main>
-          <Container>
-            <Outlet />
-          </Container>
+          <Outlet />
         </main>
       </Suspense>
+      <Modal />
     </Container>
   );
 };

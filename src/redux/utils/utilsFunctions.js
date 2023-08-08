@@ -30,13 +30,26 @@ export const templateShippingData = (DocumentNumber, API_KEY) => {
   };
 };
 
-export const templateGetDepartament = (cityName, API_KEY) => {
+export const templareGetCitysNames = (cityName, API_KEY) => {
   return {
-    apiKey: `${API_KEY}`,
+    apiKey: API_KEY,
+    modelName: 'Address',
+    calledMethod: 'searchSettlements',
+    methodProperties: {
+      CityName: cityName,
+      Limit: '10',
+      Page: '1',
+    },
+  };
+};
+
+export const templareGetWarehouses = (cityName, API_KEY) => {
+  return {
+    apiKey: API_KEY,
     modelName: 'Address',
     calledMethod: 'getWarehouses',
     methodProperties: {
-      CityName: `${cityName}`,
+      CityName: cityName,
     },
   };
 };

@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { getParcelInfo } from 'redux/operations';
 import { selectInput, selectIsLoadinParcel } from 'redux/selectors';
+import css from './BtnGetTTN.module.css';
 
 const BtnGetTTN = () => {
   const dispatch = useDispatch();
@@ -19,12 +20,10 @@ const BtnGetTTN = () => {
     dispatch(getParcelInfo(inputValue));
   };
   return (
-    <button onClick={handleClick}>
-      {isLoading ? 'loading...' : 'Get status TTN'}
+    <button className={css.btnGetTTN} onClick={handleClick}>
+      {isLoading ? 'Завантаження...' : 'Отримати статус посилки'}
     </button>
   );
 };
 
-export { BtnGetTTN };
-
-// JSON.parse(localStorage.getItem('storyParcel'));
+export default BtnGetTTN;

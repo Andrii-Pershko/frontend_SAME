@@ -1,0 +1,87 @@
+.modal {
+    width: 250px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0px;
+    left: -250px;
+    transition: left 1s;
+    padding-top: 30px;
+    z-index: 100;
+}
+
+.isOpen {
+    left: 0;
+    transition: all 1s;
+}
+
+.storyModal {
+    display: block;
+    background-color: red;
+}
+
+.togleModal {
+    position: absolute;
+    top: 75px;
+    right: -35px;
+    transition: left 1s;
+    width: 20px;
+    height: 32px;
+    z-index: 5;
+}
+
+.togleModal::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 6px;
+    background-color: red;
+    border-radius: 20px;
+    left: 0;
+    transform: translate(-10%, 100%) rotate(45deg);
+    transition: all 1s inline;
+    animation: moveRightLeft 2s infinite;
+}
+
+.togleModal::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 6px;
+    background-color: red;
+    left: 0;
+    border-radius: 20px;
+    bottom: 0;
+    transform: translate(-10%, -100%) rotate(-45deg);
+    animation: moveRightLeft 2s infinite;
+    transition: all 1s inline;
+}
+
+
+.openModalTogle::after {
+    transform: translate(-10%, -100%) rotate(45deg);
+
+}
+
+.openModalTogle::before {
+    transform: translate(-10%, 100%) rotate(-45deg);
+}
+
+
+
+@keyframes moveRightLeft {
+    0% {
+        left: -20;
+    }
+
+    50% {
+
+        left: -13px;
+    }
+
+    100% {
+        left: -20;
+    }
+}

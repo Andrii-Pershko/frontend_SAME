@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { inputReducer } from './input/inputSlice';
 import { parcelExtraReducer } from './parcel/parcelSlice';
-import { departamentExtraReducer } from './departament/departamentSlice';
+import { wareHouseExtraReducer } from './wareHouse/wareHouseSlice';
 
 export const reducer = combineReducers({
   input: inputReducer,
   parcel: parcelExtraReducer,
-  departament: departamentExtraReducer,
+  wareHouse: wareHouseExtraReducer,
 });

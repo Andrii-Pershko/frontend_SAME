@@ -1,17 +1,27 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setInputValue } from 'redux/input/inputSlice';
+import { resetInputTtn, setInputValue } from 'redux/input/inputSlice';
 import { selectInput } from 'redux/selectors';
+import { Input } from 'components/Input/Input';
 
 const InputTTN = () => {
   const inputValue = useSelector(selectInput);
   const dispatch = useDispatch();
 
-  const handleInputChange = event => {
-    dispatch(setInputValue(event.target.value));
+  const handleInputChange = e => {
+    dispatch(setInputValue(e.target.value));
+  };
+
+  const handleClearField = () => {
+    dispatch(resetInputTtn());
   };
 
   return (
-    <input type="text" value={inputValue} onChange={handleInputChange}></input>
+    <Input
+      value={inputValue}
+      placeholder={'Введіть номер ТТН'}
+      change={handleInputChange}
+      cleanField={handleClearField}
+    />
   );
 };
 
