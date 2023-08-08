@@ -6,17 +6,21 @@ import { useEffect, useState } from 'react';
 import css from './InputTTN.module.css';
 
 const InputTTN = () => {
-  const [hint, setHint] = useState(false);
+  const [hint, setHint] = useState('');
   const inputValue = useSelector(selectInput);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (inputValue.length > 0 && inputValue.length !== 14) {
-      setHint(true);
+    if (inputValue.trim() === '') {
+      setHint('');
+    } else if (!/^\d+$/.test(inputValue)) {
+      setHint('Введіть тільки цифри');
+    } else if (inputValue.length > 14) {
+      setHint('Не більше 14 символів');
     } else {
-      setHint(false);
+      setHint('');
     }
-  }, [inputValue.length]);
+  }, [inputValue, inputValue.length]);
 
   const handleInputChange = e => {
     dispatch(setInputValue(e.target.value));
@@ -34,7 +38,7 @@ const InputTTN = () => {
         change={handleInputChange}
         cleanField={handleClearField}
       />
-      {hint ? <p className={css.hint}>Має містити лише 14 цифр </p> : null}
+      {hint ? <p className={css.hint}>{hint}</p> : null}
     </div>
   );
 };

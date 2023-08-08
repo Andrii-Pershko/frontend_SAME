@@ -11,6 +11,9 @@ const parcelSlice = createSlice({
   name: 'parcel',
   initialState,
   reducers: {
+    resetError: (state, action) => {
+      state.error = null;
+    },
     resetParcelList: (state, action) => {
       state.parcelStoryList = [];
     },
@@ -26,5 +29,5 @@ const parcelSlice = createSlice({
   },
 });
 
-export const { resetParcelList, resetStatus } = parcelSlice.actions;
+export const { resetParcelList, resetStatus, resetError } = parcelSlice.actions;
 export const parcelExtraReducer = parcelSlice.reducer;
