@@ -16,16 +16,14 @@ const Home = () => {
   return (
     <>
       <h1> Відстежуйте свою посилку легко та швидко</h1>
-      <form>
+      <form className={css.form}>
         <InputTTN />
         <BtnGetTTN />
       </form>
 
       <div className={css.informationBlock}>
         <StatusBlock />
-        <div className={css.homeHistory}>
-          <HistoryBlock />
-        </div>
+        <HistoryBlock />
       </div>
     </>
   );

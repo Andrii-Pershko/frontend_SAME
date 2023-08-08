@@ -40,7 +40,11 @@ const HistoryBlock = ({ togleModal }) => {
     );
   }
   return (
-    <div className={css.history}>
+    <aside
+      className={`${css.history} ${
+        togleModal === undefined ? css.historyHome : null
+      }`}
+    >
       <p>Історія посилок</p>
       <button className={css.cleanBtn} onClick={cleanStoryList}>
         Очистити історію
@@ -53,7 +57,7 @@ const HistoryBlock = ({ togleModal }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </aside>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setInputValue } from 'redux/input/inputSlice';
-import { resetStatus } from 'redux/parcel/parcelSlice';
+import { resetError, resetStatus } from 'redux/parcel/parcelSlice';
 import { selectInput } from 'redux/selectors';
 import css from './StatusBlock.module.css';
 
@@ -12,16 +12,13 @@ const StatusBlock = () => {
     useSelector(state => state.parcel);
 
   useEffect(() => {
-    if (Status === 'Номер не найден') {
+    if (Status === 'Номер не найден ' || error) {
       alert(`Посилка за номером ${inputValue} не знайдена.`);
       dispatch(resetStatus());
       dispatch(setInputValue(''));
+      dispatch(resetError());
     }
   });
-
-  if (error !== null) {
-    return <p>{error}</p>;
-  }
 
   if (Status === '') {
     return (
