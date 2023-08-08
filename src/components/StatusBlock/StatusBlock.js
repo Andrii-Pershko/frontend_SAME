@@ -12,7 +12,7 @@ const StatusBlock = () => {
     useSelector(state => state.parcel);
 
   useEffect(() => {
-    if (Status === 'Номер не найден ' || error) {
+    if (Status === 'Номер не найден' || error) {
       alert(`Посилка за номером ${inputValue} не знайдена.`);
       dispatch(resetStatus());
       dispatch(setInputValue(''));
