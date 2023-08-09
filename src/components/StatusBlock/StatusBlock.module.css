@@ -9,8 +9,7 @@
 .enterTTNPlaceholder {
     text-align: center;
     display: block;
-    flex-grow: 1;
-    margin-right: 40px;
+    flex-grow: 1; 
 }
 
 .statusBlock>p:not(:last-child) {
@@ -59,5 +58,7 @@
         width: 100%;
         margin-right: 20px;
     }
-
+.enterTTNPlaceholder {
+    margin-right: 40px;
+}
 }
