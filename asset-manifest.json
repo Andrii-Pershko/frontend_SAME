@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/frontend_SAME/static/css/main.9fa5f20c.css",
-    "main.js": "/frontend_SAME/static/js/main.9f7003f7.js",
+    "main.css": "/frontend_SAME/static/css/main.14b4bff0.css",
+    "main.js": "/frontend_SAME/static/js/main.c981e20e.js",
     "static/media/PTSansNarrow-Bold.ttf": "/frontend_SAME/static/media/PTSansNarrow-Bold.6c0b55dfa0028e0768af.ttf",
     "static/media/Logo.png": "/frontend_SAME/static/media/Logo.fb526ed4abea0431f559.png",
     "static/media/croosRed.png": "/frontend_SAME/static/media/croosRed.0a4382c8257775866dd1.png",
     "index.html": "/frontend_SAME/index.html",
-    "main.9fa5f20c.css.map": "/frontend_SAME/static/css/main.9fa5f20c.css.map",
-    "main.9f7003f7.js.map": "/frontend_SAME/static/js/main.9f7003f7.js.map"
+    "main.14b4bff0.css.map": "/frontend_SAME/static/css/main.14b4bff0.css.map",
+    "main.c981e20e.js.map": "/frontend_SAME/static/js/main.c981e20e.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fa5f20c.css",
-    "static/js/main.9f7003f7.js"
+    "static/css/main.14b4bff0.css",
+    "static/js/main.c981e20e.js"
   ]
 }
