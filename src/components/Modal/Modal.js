@@ -1,10 +1,15 @@
 import NavigateBtn from 'components/NavigateBtn';
 import css from './Modal.module.css';
 import HistoryBlock from 'components/HistoryBlock';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Modal = () => {
+  console.log('Example', document.body);
   const [openModal, setOpenModal] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle('notEvent');
+  });
 
   const togleModal = () => {
     setOpenModal(!openModal);

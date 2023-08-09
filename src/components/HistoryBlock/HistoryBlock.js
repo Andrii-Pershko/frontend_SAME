@@ -9,6 +9,8 @@ import { useLocation, useNavigate } from 'react-router';
 const HistoryBlock = ({ togleModal }) => {
   const historyParceList = useSelector(selectParcelList);
 
+  const reverseHistoryParceList = [...historyParceList].reverse();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,7 +34,7 @@ const HistoryBlock = ({ togleModal }) => {
     dispatch(resetParcelList());
   };
 
-  if (historyParceList.length === 0) {
+  if (reverseHistoryParceList.length === 0) {
     return (
       <div className={css.history}>
         <p>Історія посилок порожння</p>
@@ -51,7 +53,7 @@ const HistoryBlock = ({ togleModal }) => {
       </button>
 
       <ul>
-        {historyParceList.map(parceNumber => (
+        {reverseHistoryParceList.map(parceNumber => (
           <li key={parceNumber} onClick={handleGetStatusParcel}>
             {parceNumber}
           </li>

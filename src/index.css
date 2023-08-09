@@ -46,3 +46,8 @@ button:active {
 li {
   cursor: pointer;
 }
+
+.notEvent {
+  pointer-events: none;
+  overflow: hidden;
+}

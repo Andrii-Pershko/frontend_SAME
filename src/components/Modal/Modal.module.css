@@ -8,7 +8,7 @@
     transition: left 1s;
     padding-top: 30px;
     z-index: 100;
-    overflow: auto;
+    pointer-events: all;
 }
 
 .isOpen {
@@ -29,6 +29,7 @@
     width: 20px;
     height: 32px;
     z-index: 5;
+    pointer-events: all;
 }
 
 .togleModal::before {
