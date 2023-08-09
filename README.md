@@ -26,8 +26,9 @@
 - Axios
 - Webpack
 - Redux Toolkit
+- React router dom
 
-## Установка
+## Встановлення
 
 1. Скачайте проект.
 2. Запустіть `npm install` для встановлення залежностей.
