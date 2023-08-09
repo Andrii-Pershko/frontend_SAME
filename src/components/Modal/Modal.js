@@ -8,7 +8,11 @@ const Modal = () => {
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
-    document.body.classList.toggle('notEvent');
+    if (openModal) {
+      document.body.classList.add('notEvent');
+    } else {
+      document.body.classList.remove('notEvent');
+    }
   });
 
   const togleModal = () => {
