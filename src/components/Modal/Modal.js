@@ -4,7 +4,6 @@ import HistoryBlock from 'components/HistoryBlock';
 import { useEffect, useState } from 'react';
 
 const Modal = () => {
-  console.log('Example', document.body);
   const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
