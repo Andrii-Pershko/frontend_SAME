@@ -9,6 +9,8 @@
 .enterTTNPlaceholder {
     text-align: center;
     display: block;
+    width: calc(100% - 230px);
+    padding-right: 35px;
 }
 
 .statusBlock>p:not(:last-child) {
