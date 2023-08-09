@@ -1,6 +1,6 @@
 .statusBlock {
     font-size: 18px;
-    display: inline;
+    display: block;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
@@ -9,7 +9,6 @@
 .enterTTNPlaceholder {
     text-align: center;
     display: block;
-    flex-grow: 1; 
 }
 
 .statusBlock>p:not(:last-child) {
@@ -24,7 +23,6 @@
 .pearcelData {
     background-color: white;
     margin-bottom: 10px;
-    flex-grow: 1;
 }
 
 .pearcelData table {
@@ -33,14 +31,13 @@
 }
 
 .pearcelData th {
-    min-width: 150px;
+    width: 150px;
     text-align: left;
     border-right: 3px solid aliceblue
 }
 
 .pearcelData th,
 .pearcelData td {
-
     padding: 7px;
     border-bottom: 3px solid aliceblue
 }
@@ -55,10 +52,10 @@
 
 @media screen and (min-width:768px) {
     .pearcelData {
-        width: 100%;
-        margin-right: 20px;
+        width: calc(100% - 230px);
     }
-.enterTTNPlaceholder {
-    margin-right: 40px;
-}
+
+    .enterTTNPlaceholder {
+        background-color: rgb(250, 246, 241);
+    }
 }

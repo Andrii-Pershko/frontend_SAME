@@ -1,5 +1,7 @@
 .history {
     margin-top: 40px;
+    width: 250px;
+
 }
 
 .historyHome {
@@ -58,5 +60,6 @@
     .historyHome {
         display: block;
         margin-top: 0;
+        width: 220px;
     }
 }
