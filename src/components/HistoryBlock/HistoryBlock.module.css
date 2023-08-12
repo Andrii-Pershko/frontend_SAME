@@ -48,3 +48,17 @@
     background-size: contain;
     background-image: url('../../img/mini-logo.png');
 }
+
+@media screen and (min-width:768px) {
+    .historyHome {
+        display: block;
+        margin-top: 0;
+        width: 220px;
+        text-align: left;
+    }
+
+    .historyHome ul {
+        display: block;
+        margin-left: 55px;
+    }
+}
