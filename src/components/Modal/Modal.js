@@ -1,10 +1,18 @@
-import { NavigateBtn } from 'components/NavigateBtn/NavigateBtn';
+import NavigateBtn from 'components/NavigateBtn';
 import css from './Modal.module.css';
-import HistoryBlock from 'components/HistoryBlock/HistoryBlock';
-import { useState } from 'react';
+import HistoryBlock from 'components/HistoryBlock';
+import { useEffect, useState } from 'react';
 
-export const Modal = () => {
+const Modal = () => {
   const [openModal, setOpenModal] = useState(false);
+
+  useEffect(() => {
+    if (openModal) {
+      document.body.classList.add('notEvent');
+    } else {
+      document.body.classList.remove('notEvent');
+    }
+  });
 
   const togleModal = () => {
     setOpenModal(!openModal);
@@ -14,12 +22,12 @@ export const Modal = () => {
     <div className={`${css.modal} ${openModal ? css.isOpen : ''}`}>
       <NavigateBtn
         togleModal={togleModal}
-        navigateTo={'/'}
+        navigateto={'/'}
         content={'Перевірити ТТН'}
       ></NavigateBtn>
       <NavigateBtn
         togleModal={togleModal}
-        navigateTo={'/departaments'}
+        navigateto={'/departaments'}
         content={'Список відділень'}
       ></NavigateBtn>
       <div
@@ -30,3 +38,5 @@ export const Modal = () => {
     </div>
   );
 };
+
+export default Modal;

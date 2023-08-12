@@ -21,7 +21,7 @@ const BtnGetTTN = () => {
   };
   return (
     <button className={css.btnGetTTN} onClick={handleClick}>
-      {isLoading ? 'Завантаження...' : 'Отримати статус посилки'}
+      {isLoading ? 'Завантаження...' : 'Отримати статус'}
     </button>
   );
 };

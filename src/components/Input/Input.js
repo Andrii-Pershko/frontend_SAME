@@ -4,11 +4,11 @@ import css from './Input.module.css';
 const override = {
   height: '39px',
   position: 'absolute',
-  right: '-8px',
+  right: '8px',
   top: '10px',
 };
 
-export const Input = ({
+const Input = ({
   disabled,
   value,
   placeholder,
@@ -44,3 +44,5 @@ export const Input = ({
     </div>
   );
 };
+
+export default Input;

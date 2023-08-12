@@ -27,3 +27,27 @@ code {
   border: none;
   box-sizing: border-box;
 }
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  background-color: rgb(214, 7, 7);
+}
+
+button:active {
+  background-color: rgb(154, 3, 3);
+}
+
+li {
+  cursor: pointer;
+}
+
+.notEvent {
+  pointer-events: none;
+  overflow: hidden;
+}

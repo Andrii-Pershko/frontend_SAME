@@ -1,11 +1,14 @@
 import css from './WareHouseSearch.module.css';
-import { Input } from 'components/Input/Input';
+import Input from 'components/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  selectCityError,
   selectCityList,
   selectCityName,
+  selectErrorWareHouse,
   selectIsLoadingCity,
   selectIsLoadingWareHouse,
+  selectSelectWareHouse,
   selectWareHouseList,
   selectWareHouseName,
 } from 'redux/selectors';
@@ -15,6 +18,7 @@ import {
   resetWareHouse,
   resetWarehouseField,
   setCityList,
+  setSelectWareHouse,
   setWareHouseName,
 } from 'redux/wareHouse/wareHouseSlice';
 import List from 'components/List';
@@ -25,7 +29,9 @@ import Table from 'components/Table/Table';
 const WareHouseSearch = () => {
   const [closeWareHouseList, setCloseWareHouseList] = useState(true);
   const [closeCityList, setCloseCityList] = useState(true);
-  const [selectWareHouse, setSelectWarhouse] = useState(null);
+
+  const cityNotFound = useSelector(selectCityError);
+  const wareHouseNotFound = useSelector(selectErrorWareHouse);
 
   const dispath = useDispatch();
 
@@ -33,6 +39,7 @@ const WareHouseSearch = () => {
   const cityList = useSelector(selectCityList);
   const cityIsLoading = useSelector(selectIsLoadingCity);
 
+  const selectWareHouse = useSelector(selectSelectWareHouse);
   const wareHouseInput = useSelector(selectWareHouseName);
   const wareHouseList = useSelector(selectWareHouseList);
   const wareHouseIsLoad = useSelector(selectIsLoadingWareHouse);
@@ -91,19 +98,18 @@ const WareHouseSearch = () => {
     const warhouseData = wareHouseList.filter(
       wareHouse => wareHouse.Description === selectWareHouse
     );
-
-    setSelectWarhouse(warhouseData);
+    dispath(setSelectWareHouse(warhouseData));
   };
 
   const handlerWareHouse = e => {
     const wareHouseValue = e.target.value;
     dispath(setWareHouseName(wareHouseValue));
-    setSelectWarhouse(null);
+    dispath(setSelectWareHouse(null));
   };
 
   const handleClearWareHouseField = () => {
     dispath(resetWarehouseField());
-    setSelectWarhouse(null);
+    dispath(setSelectWareHouse(null));
   };
   return (
     <>
@@ -117,6 +123,11 @@ const WareHouseSearch = () => {
           styleName={'wareHouseFild'}
           isLoading={cityIsLoading}
         />
+        {cityNotFound ? (
+          cityName === '' ? null : (
+            <p className={css.notFound}>Місто не знайдене</p>
+          )
+        ) : null}
 
         <List
           list={cityList}
@@ -136,6 +147,11 @@ const WareHouseSearch = () => {
           disabled={wareHouseList.length === 0}
           isLoading={wareHouseIsLoad}
         />
+        {wareHouseNotFound && cityName !== '' ? (
+          <p className={css.notFound}>
+            Відділення відсутні або не обслуговуються
+          </p>
+        ) : null}
         <List
           list={filteredWarehouse}
           property={'Description'}

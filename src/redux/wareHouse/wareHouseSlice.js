@@ -25,9 +25,14 @@ const wareHousetSlice = createSlice({
       state.cityList = [];
       state.wareHouseList = [];
       state.wareHouseName = '';
+      state.errorWareHouse = false;
+      state.selecrWarhouse = null;
     },
     setWareHouseName: (state, action) => {
       state.wareHouseName = action.payload;
+    },
+    setSelectWareHouse: (state, actio) => {
+      state.selecrWarhouse = actio.payload;
     },
     resetWarehouseField: state => {
       state.wareHouseName = '';
@@ -55,5 +60,6 @@ export const {
   setWareHouseName,
   resetWarehouseField,
   resetWareHouse,
+  setSelectWareHouse,
 } = wareHousetSlice.actions;
 export const wareHouseExtraReducer = wareHousetSlice.reducer;

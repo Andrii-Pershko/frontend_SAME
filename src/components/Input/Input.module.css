@@ -1,23 +1,25 @@
 .inputContainer {
     display: flex;
-    width: 225px;
+    width: 100%;
+    max-width: 320px;
     position: relative;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+
 }
 
 .parcelNumberInput {
-    width: 250px;
+    width: 100%;
     padding-bottom: 5px;
     padding-top: 5px;
     border: 2px solid red;
     background-color: inherit;
     border-radius: 15px;
     padding-left: 15px;
-    padding-right: 25px;
+    padding-right: 30px;
     font-size: 22px;
+    background-color: white;
 }
 
 .parcelNumberInput:focus {
@@ -31,12 +33,12 @@
     height: 18px;
     position: absolute;
     background-repeat: no-repeat;
-    right: -3px;
     top: 10px;
+    right: 8px;
 }
 
 .wareHouseFild {
-    min-width: 250px;
+    min-width: 100%;
     width: 100%;
 }
 

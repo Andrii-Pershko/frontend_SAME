@@ -1,0 +1,12 @@
+.inputTTNThumb {
+    position: relative;
+    margin-right: 20px;
+}
+
+.hint {
+    color: red;
+    position: absolute;
+    bottom: -18px;
+    width: 100%;
+    text-align: center;
+}
