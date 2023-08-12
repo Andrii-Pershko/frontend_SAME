@@ -61,5 +61,13 @@
         display: block;
         margin-top: 0;
         width: 220px;
+
+        text-align: left;
+    }
+
+    .historyHome ul {
+        display: block;
+        margin-left: 55px;
+
     }
 }
